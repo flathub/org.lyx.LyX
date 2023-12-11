@@ -11,6 +11,7 @@ finish-args:
   - --device=dri
   - --share=ipc
   - --persist=.lyx
+  - --persist=Rpkgs
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-documents
   - --env=PATH=/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
@@ -19,6 +20,14 @@ add-extensions:
     version: "23.08"
     directory: texlive
     autodelete: false
+  org.lyx.LyX.LilyPond:
+    directory: Extensions
+    no-autodownload: true
+    autodelete: true
+  org.lyx.LyX.SweaveKnitr:
+    directory: Extensions
+    no-autodownload: true
+    autodelete: true
 modules:
   - name: texlive
     buildsystem: simple

@@ -29,10 +29,11 @@ add-extensions:
     no-autodownload: true
     autodelete: true
 modules:
-  - name: texlive
+  - name: texliveYextensions
     buildsystem: simple
     build-commands:
       - install -d /app/texlive
+      - install -d /app/Extensions
   - name: magick
     buildsystem: autotools
     sources:

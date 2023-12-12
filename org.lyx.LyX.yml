@@ -14,7 +14,8 @@ finish-args:
   - --persist=Rpkgs
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-documents
-  - --env=PATH=/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
+  - --env=PATH=/app/Extensions/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
+  - --env=LD_LIBRARY_PATH:/app/Extensions/lib
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: "23.08"

@@ -58,6 +58,7 @@ modules:
       - --with-included-hunspell
     post-install:
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
+      - mv /app/bin/lyx /app/bin/Xlyx
     sources:
       - type: archive
         url: https://ftp.lip6.fr/pub/lyx/stable/2.3.x/lyx-2.3.7-1.tar.gz
@@ -68,3 +69,10 @@ modules:
         path: convertDefault.py.patch
       - type: file
         path: org.lyx.LyX.appdata.xml
+  - name: start
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 lyx /app/bin/lyx
+    sources:
+      - type: file
+        path: lyx

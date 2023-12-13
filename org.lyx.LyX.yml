@@ -14,27 +14,29 @@ finish-args:
   - --persist=Rpkgs
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-documents
-  - --env=PATH=/app/Extensions/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
-  - --env=LD_LIBRARY_PATH:/app/Extensions/lib
+  - --env=PATH=/app/Extensions/R/bin:/app/Extensions/LilyPond/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: "23.08"
     directory: texlive
     autodelete: false
   org.lyx.LyX.LilyPond:
-    directory: Extensions
+    directory: Extensions/LilyPond
     no-autodownload: true
     autodelete: true
+    add-ld-path: lib
   org.lyx.LyX.SweaveKnitr:
-    directory: Extensions
+    directory: Extensions/R
     no-autodownload: true
     autodelete: true
+    add-ld-path: lib
 modules:
   - name: texliveYextensions
     buildsystem: simple
     build-commands:
       - install -d /app/texlive
-      - install -d /app/Extensions
+      - install -d /app/Extensions/R
+      - install -d /app/Extensions/LilyPond
   - name: magick
     buildsystem: autotools
     sources:

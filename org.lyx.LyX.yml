@@ -21,7 +21,7 @@ add-extensions:
     directory: texlive
     autodelete: false
   org.lyx.LyX.LilyPond:
-    directory: Extensions/LilyPond
+    directory: lilyPond
     no-autodownload: true
     autodelete: true
     add-ld-path: lib

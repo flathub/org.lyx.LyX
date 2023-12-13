@@ -14,7 +14,7 @@ finish-args:
   - --persist=Rpkgs
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-documents
-  - --env=PATH=/app/Extensions/R/bin:/app/Extensions/LilyPond/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
+  - --env=PATH=/app/sweaveKnitr/bin:/app/lilyPond/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: "23.08"
@@ -26,7 +26,7 @@ add-extensions:
     autodelete: true
     add-ld-path: lib
   org.lyx.LyX.SweaveKnitr:
-    directory: Extensions/R
+    directory: sweaveKnitr
     no-autodownload: true
     autodelete: true
     add-ld-path: lib
@@ -35,8 +35,8 @@ modules:
     buildsystem: simple
     build-commands:
       - install -d /app/texlive
-      - install -d /app/Extensions/R
-      - install -d /app/Extensions/LilyPond
+      - install -d /app/sweaveKnitr
+      - install -d /app/lilyPond
   - name: magick
     buildsystem: autotools
     sources:
@@ -61,7 +61,6 @@ modules:
       - --with-included-hunspell
     post-install:
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
-      - mv /app/bin/lyx /app/bin/Xlyx
     sources:
       - type: archive
         url: https://ftp.lip6.fr/pub/lyx/stable/2.3.x/lyx-2.3.7-1.tar.gz
@@ -72,10 +71,3 @@ modules:
         path: convertDefault.py.patch
       - type: file
         path: org.lyx.LyX.appdata.xml
-  - name: start
-    buildsystem: simple
-    build-commands:
-      - install -Dm755 lyx /app/bin/lyx
-    sources:
-      - type: file
-        path: lyx

@@ -1,5 +1,5 @@
---- lib/configure.py	2023-01-01 18:36:03.000000000 -0500
-+++ lib/configure.py-new	2023-12-13 07:23:04.772039877 -0500
+--- a/lib/configure.py	2023-01-01 18:36:03.000000000 -0500
++++ b/lib/configure.py	2023-12-13 07:23:04.772039877 -0500
 @@ -477,7 +477,7 @@
      ''' The same as checkProgAlternatives, but for viewers '''
      alt_rc_entry = listAlternatives(progs, 'viewer', rc_entry)

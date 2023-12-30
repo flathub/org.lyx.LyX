@@ -1,0 +1,12 @@
+app-id: org.lyx.LyX 
+runtime: org.freedesktop.Sdk
+runtime-version: "23.08"
+sdk: org.freedesktop.Sdk
+command: gcl
+modules:
+  - name: gcl
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: http://mirror.keystealth.org/gnu/gcl/gcl-2.6.14.tar.gz
+        sha256: 09f3417c512aa1733a638809d3a63ac290eeb9448be82795f5b6681bd307345a

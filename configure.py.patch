@@ -1,5 +1,5 @@
 --- a/lib/configure.py	2023-01-01 18:36:03.000000000 -0500
-+++ b/lib/configure.py	2023-12-09 16:02:11.562160940 -0500
++++ b/lib/configure.py	2023-12-13 07:23:04.772039877 -0500
 @@ -477,7 +477,7 @@
      ''' The same as checkProgAlternatives, but for viewers '''
      alt_rc_entry = listAlternatives(progs, 'viewer', rc_entry)
@@ -22,6 +22,25 @@
          #
          checkProg('a SVG -> PNG converter', ['rsvg-convert -f png -o $$o $$i', inkscape_cl + ' $$i --export-filename=$$o'],
              rc_entry = [ r'''\converter svg        png        "%%"    "",
+@@ -1228,12 +1228,12 @@
+                 #       even when requested with --pdf. This is a problem if a user
+                 #       clicks View PDF after having done a View DVI. To circumvent
+                 #       this, use different output folders for eps and pdf outputs.
+-                addToRC(r'\converter lilypond-book latex    "lilypond-book --safe --lily-output-dir=ly-eps $$i"                                ""')
+-                addToRC(r'\converter lilypond-book pdflatex "lilypond-book --safe --pdf --latex-program=pdflatex --lily-output-dir=ly-pdf $$i" ""')
+-                addToRC(r'\converter lilypond-book-ja platex "lilypond-book --safe --pdf --latex-program=platex --lily-output-dir=ly-pdf $$i" ""')
+-                addToRC(r'\converter lilypond-book xetex    "lilypond-book --safe --pdf --latex-program=xelatex --lily-output-dir=ly-pdf $$i"  ""')
+-                addToRC(r'\converter lilypond-book luatex   "lilypond-book --safe --pdf --latex-program=lualatex --lily-output-dir=ly-pdf $$i" ""')
+-                addToRC(r'\converter lilypond-book dviluatex "lilypond-book --safe --latex-program=dvilualatex --lily-output-dir=ly-eps $$i" ""')
++                addToRC(r'\converter lilypond-book latex    "lilypond-book --lily-output-dir=ly-eps $$i"                                ""')
++                addToRC(r'\converter lilypond-book pdflatex "lilypond-book --pdf --latex-program=pdflatex --lily-output-dir=ly-pdf $$i" ""')
++                addToRC(r'\converter lilypond-book-ja platex "lilypond-book --pdf --latex-program=platex --lily-output-dir=ly-pdf $$i" ""')
++                addToRC(r'\converter lilypond-book xetex    "lilypond-book --pdf --latex-program=xelatex --lily-output-dir=ly-pdf $$i"  ""')
++                addToRC(r'\converter lilypond-book luatex   "lilypond-book --pdf --latex-program=lualatex --lily-output-dir=ly-pdf $$i" ""')
++                addToRC(r'\converter lilypond-book dviluatex "lilypond-book --latex-program=dvilualatex --lily-output-dir=ly-eps $$i" ""')
+                 logger.info('+  found LilyPond-book version %s.' % version_number)
+             else:
+                 logger.info('+  found LilyPond-book, but version %s is too old.' % version_number)
 @@ -1888,7 +1888,94 @@
          removeFiles(['chkconfig.vars', 'chklatex.ltx', 'chklatex.log',
              'chklayouts.tex', 'chkmodules.tex', 'chkciteengines.tex',

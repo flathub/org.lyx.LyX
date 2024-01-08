@@ -11,19 +11,27 @@ finish-args:
   - --device=dri
   - --share=ipc
   - --persist=.lyx
+  - --persist=Rpkgs
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-documents
-  - --env=PATH=/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
+  - --env=PATH=/app/plugins/SweaveKnitr/bin:/app/plugins/LilyPond/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: "23.08"
     directory: texlive
     autodelete: false
+  org.lyx.LyX.Plugin:
+    directory: plugins
+    subdirectories: true
+    no-autodownload: true
+    autodelete: true
+    add-ld-path: lib
 modules:
-  - name: texlive
+  - name: texliveYextensions
     buildsystem: simple
     build-commands:
       - install -d /app/texlive
+      - install -d /app/plugins
   - name: magick
     buildsystem: autotools
     sources:

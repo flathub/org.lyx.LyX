@@ -16,10 +16,6 @@ finish-args:
   - --filesystem=xdg-documents
   - --env=PATH=/app/plugins/SweaveKnitr/bin:/app/plugins/LilyPond/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
 add-extensions:
-  org.freedesktop.Sdk.Extension.texlive:
-    version: "23.08"
-    directory: texlive
-    autodelete: false
   org.lyx.LyX.Plugin:
     directory: plugins
     subdirectories: true

@@ -21,6 +21,7 @@ add-extensions:
     directory: texlive
     autodelete: false
   org.lyx.LyX.Plugin:
+    versions=stable;beta;test
     directory: plugins
     subdirectories: true
     no-autodownload: true

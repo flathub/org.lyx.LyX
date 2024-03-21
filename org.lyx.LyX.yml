@@ -62,15 +62,10 @@ modules:
       - type: archive
         url: https://ftp.lip6.fr/pub/lyx/stable/2.3.x/lyx-2.3.7-1.tar.gz
         sha256: 910bb48d9b19c0cfeb6ec845eb318515f33a63ea7892a99b2e7b67c6b518bacd
-      - type: patch
-        path: configure.py.patch
-      - type: patch # LyXv2.4-->delete (convert pdf not working)
-        path: convertDefault.py.patch
       - type: file
         path: org.lyx.LyX.appdata.xml
       - type: script
         dest-filename: evince
         commands:
-          - '#!/bin/bash'
           - exec xdg-open "$@"
 

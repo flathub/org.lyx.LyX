@@ -52,11 +52,9 @@
         <category>Science</category>
         <category>Education</category>
     </categories>
-    <updatecontact>lyx-devel@lists.lyx.org</updatecontact>
     <url type="bugtracker">https://www.lyx.org/MailingLists</url>
     <url type="homepage">https://www.lyx.org</url>
     <url type="help">https://wiki.lyx.org/</url>
-    <developer_name>LyX</developer_name>
     <kudos>
         <kudo>HiDpiIcon</kudo>
         <kudo>HighContrast</kudo>

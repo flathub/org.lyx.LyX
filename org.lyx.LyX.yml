@@ -60,8 +60,8 @@ modules:
       - install -Dm755 evince /app/bin/evince
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.3.x/lyx-2.3.7-1.tar.gz
-        sha256: 910bb48d9b19c0cfeb6ec845eb318515f33a63ea7892a99b2e7b67c6b518bacd
+        url: https://ftp.lip6.fr/pub/lyx/devel/lyx-2.4/lyx-2.4.0~RC3.tar.xz
+        sha256: c300c6fe9b4c1a8ddcd2fd30ec636fa3bcd3c42cf3c4fd1baacf56953249b8f7
       - type: file
         path: org.lyx.LyX.appdata.xml
       - type: script

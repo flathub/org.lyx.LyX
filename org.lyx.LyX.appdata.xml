@@ -6,6 +6,9 @@
     <project_license>GPL-2.0-or-later</project_license>
     <name>LyX</name>
     <summary>The Document Processor</summary>
+    <developer id="org.lyx">
+   	 <name>LyX Team</name>
+    </developer>
     <description>
 	<p>
   	    Advertisement: This package contains only TexLive, a spell checker (Hunspell)
@@ -33,21 +36,20 @@
     	    nothing else.
 	</p>
     </description>
-    <developer id="org.lyx">
-   	 <name>LyX Team</name>
-    </developer>
+
     <screenshots>
         <screenshot type="default">
-          <image width="1000" height="814">www.lyx.org/images/about/main_window.png</image>
+          <image width="1000" height="814">https://www.lyx.org/images/about/main_window.png</image>
           <caption>The startup screen of LyX</caption>
         </screenshot>
         <screenshot width="623" height="431">
           <image>https://www.lyx.org/images/LGT/cross-reference-inserted.png</image>
         </screenshot>
         <screenshot>
-          <image width="962" height="720">http://www.lyx.org/images/about/edit_menu.png</image>
+          <image width="962" height="720">https://www.lyx.org/images/about/edit_menu.png</image>
         </screenshot>
     </screenshots>
+
     <categories>
         <category>Science</category>
         <category>Education</category>

@@ -6,10 +6,6 @@
     <project_license>GPL-2.0-or-later</project_license>
     <name>LyX</name>
     <summary>The Document Processor</summary>
-    <developer id="tld.vendor">
-   	 <name>lyx</name>
-    </developer>
-    <developer_name>lyx</developer_name>
     <description>
 	<p>
   	    Advertisement: This package contains only TexLive, a spell checker (Hunspell)
@@ -37,6 +33,9 @@
     	    nothing else.
 	</p>
     </description>
+    <developer id="org.lyx">
+   	 <name>LyX Team</name>
+    </developer>
     <screenshots>
         <screenshot type="default">
           <image width="1000" height="814">www.lyx.org/images/about/main_window.png</image>

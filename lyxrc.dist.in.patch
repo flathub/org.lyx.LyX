@@ -1,0 +1,95 @@
+--- a/development/unix/lyxrc.dist.in	2024-02-09 19:57:15.000000000 -0500
++++ b/development/unix/lyxrc.dist.in	2024-03-24 21:49:35.476095920 -0500
+@@ -1,17 +1,79 @@
+-### This file is part of
+-### ========================================================
+-###          LyX, The Document Processor
+-###
+-###          Copyright 1995 Matthias Ettrich
+-###          Copyright 1995-2018 The LyX Team.
+-###
+-### ========================================================
++# LyX 2.4.0~RC3 generated this file. If you want to make your own
++# modifications you should do them from inside LyX and save.
+ 
+-# This file is written by LyX, if you want to make your own
+-# modifications you should do them from inside LyX and save
++Format 38
+ 
+-Format 25
+ 
+-\texinputs_prefix ".:@LYX_ABS_INSTALLED_DATADIR@tex"
+-\serverpipe "$$UserDir/.lyxpipe"
++#
++# MISC SECTION ######################################
++#
++
++\user_name "trx"
++\user_email ""
++\user_initials ""
++
++#
++# SCREEN & FONTS SECTION ############################
++#
++
++\screen_font_sizes 5 7 8 9 10 12 14.4 17.26 20.74 24.88
++\single_instance false
++
++#
++# COLOR SECTION ###################################
++#
++
++
++#
++# PRINTER SECTION ###################################
++#
++
++
++#
++# TEX SECTION #######################################
++#
++
++
++#
++# FILE SECTION ######################################
++#
++
++\tempdir_path "/home/trx/Documentos/zzzzzzz"
++
++#
++# PLAIN TEXT EXPORT SECTION ##############################
++#
++
++
++#
++# SPELLCHECKER SECTION ##############################
++#
++
++
++#
++# LANGUAGE SUPPORT SECTION ##########################
++#
++
++\spellchecker hunspell
++\language_custom_package ""
++
++#
++# 2nd MISC SUPPORT SECTION ##########################
++#
++
++
++#
++# FORMATS SECTION ##########################
++#
++
++
++#
++# CONVERTERS SECTION ##########################
++#
++
++
++#
++# COPIERS SECTION ##########################
++#
++
+ 

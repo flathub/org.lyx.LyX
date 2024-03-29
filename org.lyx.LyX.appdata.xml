@@ -35,7 +35,7 @@
     </description>
     <screenshots>
         <screenshot type="default">
-          <image width="1000" height="814">www.lyx.org/images/about/main_window.png</image>
+          <image width="1000" height="814">http://www.lyx.org/images/about/main_window.png</image>
           <caption>The startup screen of LyX</caption>
         </screenshot>
         <screenshot width="623" height="431">
@@ -49,7 +49,7 @@
         <category>Science</category>
         <category>Education</category>
     </categories>
-    <updatecontact>lyx-devel@lists.lyx.org</updatecontact>
+    <update_contact>lyx-devel@lists.lyx.org</update_contact>
     <url type="bugtracker">https://www.lyx.org/MailingLists</url>
     <url type="homepage">https://www.lyx.org</url>
     <url type="help">https://wiki.lyx.org/</url>

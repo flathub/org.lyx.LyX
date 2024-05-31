@@ -64,5 +64,7 @@ modules:
         url: https://muug.ca/mirror/lyx/stable/2.4.x/lyx-2.4.0.tar.xz
         sha256: e7575d3a42e96e57d45e06022a924bcc51128b55c6a0d83f8742fe346c2e59f2
       - type: file
+        path: evince
+      - type: file
         path: org.lyx.LyX.appdata.xml
 

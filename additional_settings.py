@@ -1,5 +1,5 @@
 
-import os
+import os, subprocess
 
 def additional_settings():
 	__varError_xdg=False

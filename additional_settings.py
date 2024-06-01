@@ -63,14 +63,18 @@ Format 38
 \\spellchecker hunspell\n
 #
 # LANGUAGE SUPPORT SECTION ##########################
-#\n\n
+#
+\n
+\\spellchecker hunspell\n
+\\language_custom_package ""\n
+\n
 #
 # 2nd MISC SUPPORT SECTION ##########################
 #\n\n
 #
 # FORMATS SECTION ##########################
 #\n
-\\default_otf_view_format dvi3\n
+\n
 #
 # CONVERTERS SECTION ##########################
 #\n\n

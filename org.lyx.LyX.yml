@@ -66,6 +66,8 @@ modules:
         sha256: e7575d3a42e96e57d45e06022a924bcc51128b55c6a0d83f8742fe346c2e59f2
       - type: file
         path: additional_settings.py
+      - type: patch
+        path: configure.py.patch
       - type: file
         path: evince
       - type: file

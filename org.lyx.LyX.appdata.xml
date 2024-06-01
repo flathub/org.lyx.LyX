@@ -12,8 +12,8 @@
     <description>
 	<p>
   	    Advertisement: This package contains only TexLive, a spell checker (Hunspell)
-            and a version control. Via addons you can add support for LilyPond, Sweave and Knitr.
-            After installation you must reconfigure, Tools->Reconfigure
+            and a version control (rcs). Via addons you can add support for LilyPond, Sweave and Knitr.
+            After installing an add-ons, you must reconfigure, Tools->Reconfigure
 	</p>
 	<p>
 	    LyX combines the power and flexibility of TeX/LaTeX with the
@@ -71,15 +71,6 @@
         <content_attribute id="social-info">mild</content_attribute>
     </content_rating>
     <releases>
-        <release version="2.3.7" date="2023-01-07">
-            <description>
-                <p>
-                  The seventh maintenance release of the series 2.3.x.
-                </p>
-                <p>
-                  Bug fixes.
-                </p>
-            </description>
-        </release>
+        <release version="2.4.0" date="2024-05-31"></release>
     </releases>
 </component>

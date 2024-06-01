@@ -59,10 +59,13 @@ modules:
       - rm -r /app/share/metainfo
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
       - install -Dm755 evince /app/bin/evince
+      - install -Dm755 additional_settings.py /app/bin/additional_settings.py
     sources:
       - type: archive
         url: https://muug.ca/mirror/lyx/stable/2.4.x/lyx-2.4.0.tar.xz
         sha256: e7575d3a42e96e57d45e06022a924bcc51128b55c6a0d83f8742fe346c2e59f2
+      - type: file
+        path: additional_settings.py
       - type: file
         path: evince
       - type: file

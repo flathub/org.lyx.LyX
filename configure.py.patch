@@ -1,0 +1,12 @@
+--- a/lib/configure.py	2024-06-01 17:52:00.639149558 -0500
++++ b/lib/configure.py	2024-06-01 17:52:25.694150450 -0500
+@@ -2103,6 +2103,9 @@
+     # --without-latex-config can disable lyx_check_config
+     ret = checkLatexConfig(lyx_check_config and LATEX)
+     removeTempFiles()
++    
++    subprocess.run(['python3', '/app/bin/additional_settings.py'])
++    
+     # The return error code can be 256. Because most systems expect an error code
+     # in the range 0-127, 256 can be interpretted as 'success'. Because we expect
+     # a None for success, 'ret is not None' is used to exit.

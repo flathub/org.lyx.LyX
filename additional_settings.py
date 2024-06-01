@@ -59,8 +59,7 @@ Format 38
 #\n\n
 #
 # SPELLCHECKER SECTION ##############################
-#\n
-\\spellchecker hunspell\n
+#\n\n
 #
 # LANGUAGE SUPPORT SECTION ##########################
 #

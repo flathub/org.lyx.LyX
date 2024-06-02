@@ -21,6 +21,7 @@ add-extensions:
     directory: texlive
     autodelete: false
   org.lyx.LyX.Plugin:
+    versions: stable;beta;test
     directory: plugins
     subdirectories: true
     no-autodownload: true
@@ -55,14 +56,20 @@ modules:
     config-opts:
       - --with-included-hunspell
     post-install:
+      - rm -r /app/share/metainfo
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
+      - install -Dm755 evince /app/bin/evince
+      - install -Dm755 additional_settings.py /app/bin/additional_settings.py
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.3.x/lyx-2.3.7-1.tar.gz
-        sha256: 910bb48d9b19c0cfeb6ec845eb318515f33a63ea7892a99b2e7b67c6b518bacd
+        url: https://muug.ca/mirror/lyx/stable/2.4.x/lyx-2.4.0.tar.xz
+        sha256: e7575d3a42e96e57d45e06022a924bcc51128b55c6a0d83f8742fe346c2e59f2
+      - type: file
+        path: additional_settings.py
       - type: patch
         path: configure.py.patch
-      - type: patch # LyXv2.4-->delete (convert pdf not working)
-        path: convertDefault.py.patch
+      - type: file
+        path: evince
       - type: file
         path: org.lyx.LyX.appdata.xml
+

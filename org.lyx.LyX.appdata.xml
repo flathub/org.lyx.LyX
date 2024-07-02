@@ -39,14 +39,21 @@
 
     <screenshots>
         <screenshot type="default">
-          <image width="1000" height="814">https://www.lyx.org/images/about/main_window.png</image>
+          <image>https://bztd.github.io/LyX/p1.png</image>
           <caption>The startup screen of LyX</caption>
         </screenshot>
-        <screenshot width="623" height="431">
-          <image>https://www.lyx.org/images/LGT/cross-reference-inserted.png</image>
-        </screenshot>
+	    
         <screenshot>
-          <image width="962" height="720">https://www.lyx.org/images/about/edit_menu.png</image>
+          <image>https://bztd.github.io/LyX/p2.png</image>
+        </screenshot>
+	    
+        <screenshot>
+          <image>https://bztd.github.io/LyX/p3.png</image>
+        </screenshot>
+
+	<screenshot>
+          <image>https://bztd.github.io/LyX/beamer.png</image>
+          <caption>Beamer in LyX</caption>
         </screenshot>
     </screenshots>
 

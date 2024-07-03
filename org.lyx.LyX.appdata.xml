@@ -5,7 +5,7 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-2.0-or-later</project_license>
     <name>LyX</name>
-    <summary>The Document Processor</summary>
+    <summary>Document Processor</summary>
     <developer id="org.lyx">
    	 <name>LyX Team</name>
     </developer>
@@ -13,7 +13,7 @@
 	<p>
   	    Advertisement: This package contains only TexLive, a spell checker (Hunspell)
             and a version control (rcs). Via addons you can add support for LilyPond, Sweave and Knitr.
-            After installing an add-ons, you must reconfigure, Tools->Reconfigure
+            After installing an add-ons, you must reconfigure, Tools->Reconfigure.
 	</p>
 	<p>
 	    LyX combines the power and flexibility of TeX/LaTeX with the
@@ -39,14 +39,21 @@
 
     <screenshots>
         <screenshot type="default">
-          <image width="1000" height="814">https://www.lyx.org/images/about/main_window.png</image>
+          <image>https://bztd.github.io/LyX/p1.png</image>
           <caption>The startup screen of LyX</caption>
         </screenshot>
-        <screenshot width="623" height="431">
-          <image>https://www.lyx.org/images/LGT/cross-reference-inserted.png</image>
-        </screenshot>
+	    
         <screenshot>
-          <image width="962" height="720">https://www.lyx.org/images/about/edit_menu.png</image>
+          <image>https://bztd.github.io/LyX/p2.png</image>
+        </screenshot>
+	    
+        <screenshot>
+          <image>https://bztd.github.io/LyX/p3.png</image>
+        </screenshot>
+
+	<screenshot>
+          <image>https://bztd.github.io/LyX/beamer.png</image>
+          <caption>Beamer in LyX</caption>
         </screenshot>
     </screenshots>
 

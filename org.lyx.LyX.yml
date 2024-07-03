@@ -15,7 +15,7 @@ finish-args:
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-documents
   - --env=PATH=/app/plugins/SweaveKnitr/bin:/app/plugins/LilyPond/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
-  - --env=ASPELL_CONF="dict-dir /app/share/dicts"
+  - --env=ASPELL_CONF=dict-dir /app/share/dicts
   - --env=LD_LIBRARY_PATH=/app/texlive/lib:/app/texlive/lib/perl5/5.38.2/aarch64-linux/CORE:/app/texlive/lib/perl5/5.38.2/x86_64-linux/CORE
   - --env=PERL5LIB=/app/texlive/lib/perl5/5.38.2:/app/texlive/lib/perl5/site_perl/5.38.2
 add-extensions:
@@ -54,6 +54,26 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/rcs/rcs-5.10.1.tar.lz
         sha256: 43ddfe10724a8b85e2468f6403b6000737186f01e60e0bd62fde69d842234cc5
+  - name: dictEs-aspell
+    buildsystem: simple
+    build-commands:
+      - ./configure
+      - make datadir=/app/share/dicts dictdir=/app/share/dicts
+      - make datadir=/app/share/dicts dictdir=/app/share/dicts install
+    sources:
+      - type: archive
+        url: https://ftp.gnu.org/gnu/aspell/dict/es/aspell6-es-1.11-2.tar.bz2
+        sha256: ad367fa1e7069c72eb7ae37e4d39c30a44d32a6aa73cedccbd0d06a69018afcc
+  - name: dictEn-aspell
+    buildsystem: simple
+    build-commands:
+      - ./configure
+      - make datadir=/app/share/dicts dictdir=/app/share/dicts
+      - make datadir=/app/share/dicts dictdir=/app/share/dicts install
+    sources:
+      - type: archive
+        url: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2
+        sha256: 4c8f734a28a088b88bb6481fcf972d0b2c3dc8da944f7673283ce487eac49fb3
   - name: lyx
     buildsystem: autotools
     config-opts:

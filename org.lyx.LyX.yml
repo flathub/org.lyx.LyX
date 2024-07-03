@@ -15,7 +15,7 @@ finish-args:
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-documents
   - --env=PATH=/app/plugins/SweaveKnitr/bin:/app/plugins/LilyPond/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
-  - --env=ASPELL_CONF="dict-dir /app/share/dicts"
+  - --env=ASPELL_CONF=dict-dir /app/share/dicts
   - --env=LD_LIBRARY_PATH=/app/texlive/lib:/app/texlive/lib/perl5/5.38.2/aarch64-linux/CORE:/app/texlive/lib/perl5/5.38.2/x86_64-linux/CORE
   - --env=PERL5LIB=/app/texlive/lib/perl5/5.38.2:/app/texlive/lib/perl5/site_perl/5.38.2
 add-extensions:

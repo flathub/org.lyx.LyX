@@ -85,7 +85,7 @@ modules:
       - install -Dm755 additional_settings.py /app/bin/additional_settings.py
     sources:
       - type: archive
-        url: http://ftp.lyx.org/pub/lyx/devel/lyx-2.4/lyx-2.4.1.tar.xz
+        url: http://ftp.lyx.org/pub/lyx/stable/2.4.x/lyx-2.4.1.tar.xz
         sha256: 74de28a07ef37aa9471bc9962db182152a25310c7d1f47f676bb9bc63d9713c5
       - type: file
         path: additional_settings.py

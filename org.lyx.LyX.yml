@@ -54,6 +54,15 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/rcs/rcs-5.10.1.tar.lz
         sha256: 43ddfe10724a8b85e2468f6403b6000737186f01e60e0bd62fde69d842234cc5
+  - name: libertinus-font
+    buildsystem: simple
+    build-commands:
+      - mkdir /app/share/fonts
+      - cp static/OTF/* /app/share/fonts/
+    sources:
+      - type: archive
+        url: https://github.com/alerque/libertinus/releases/download/v7.040/Libertinus-7.040.tar.xz
+        sha256: 7fe9f022722d1c1cc67dc2c28a110b3bb55bae3575196160d2422c89333b3850
   - name: dictEs-aspell
     buildsystem: simple
     build-commands:

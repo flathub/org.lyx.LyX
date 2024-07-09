@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 architecture_type=$(uname -m)

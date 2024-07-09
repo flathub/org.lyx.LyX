@@ -2,7 +2,7 @@ app-id: org.lyx.LyX
 runtime: org.kde.Platform
 runtime-version: "5.15-23.08"
 sdk: org.kde.Sdk
-command: lyx
+command: startLyX.sh
 rename-desktop-file: lyx.desktop
 rename-icon: lyx
 finish-args:
@@ -14,10 +14,6 @@ finish-args:
   - --persist=Rpkgs
   - --filesystem=xdg-pictures:ro
   - --filesystem=xdg-documents
-  - --env=PATH=/app/plugins/SweaveKnitr/bin:/app/plugins/LilyPond/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
-  - --env=ASPELL_CONF=dict-dir /app/share/dicts
-  - --env=LD_LIBRARY_PATH=/app/texlive/lib:/app/texlive/lib/perl5/5.38.2/aarch64-linux/CORE:/app/texlive/lib/perl5/5.38.2/x86_64-linux/CORE
-  - --env=PERL5LIB=/app/texlive/lib/perl5/5.38.2:/app/texlive/lib/perl5/site_perl/5.38.2
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: "23.08"
@@ -92,10 +88,13 @@ modules:
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
       - install -Dm755 evince /app/bin/evince
       - install -Dm755 additional_settings.py /app/bin/additional_settings.py
+      - install -Dm755 startLyX.sh /app/bin/startLyX.sh
     sources:
       - type: archive
         url: http://ftp.lyx.org/pub/lyx/stable/2.4.x/lyx-2.4.1.tar.xz
         sha256: 74de28a07ef37aa9471bc9962db182152a25310c7d1f47f676bb9bc63d9713c5
+      - type: file
+        path: startLyX.sh
       - type: file
         path: additional_settings.py
       - type: patch

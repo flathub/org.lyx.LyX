@@ -1,5 +1,18 @@
-if [[  ]] 
-	zenity --warning --text="In order to open the pdf with the default viewer, it is necessary that the LyX temporary folder is outside the sandbox. Try setting the path from \"Tools->Preferences->Paths\" or granting permissions for the desired path. Trying to open: $1"
+ruta_completa=$(realpath "$1")
+ruta_tmp_sandbox="/tmp/"
+
+if [[ "$ruta_completa" == "$ruta_tmp_sandbox"* ]]; then
+	if ! [[ -f ~/.lyx/noShowMessage ]]; then
+		result=$(zenity --warning \
+                   --text="If you are having problems viewing the pdf, it may be because the "/tmp" folder is being used. If that is the case, try changing it from \"Tools->Preferences->Paths\" or grant permissions for this route. Trying to open: $ruta_completa" \
+                   --extra-button="Don't show message again"\
+                   --ok-label="Accept")
+
+		if [[ "$result" == "Don't show message again" ]]; then
+			touch ~/.lyx/noShowMessage
+                fi
+        fi
 fi
 
+echo " Running: xdg-open ${ruta_completa}"
 exec xdg-open "$@"

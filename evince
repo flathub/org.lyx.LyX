@@ -1,1 +1,5 @@
+if [[  ]] 
+	zenity --warning --text="In order to open the pdf with the default viewer, it is necessary that the LyX temporary folder is outside the sandbox. Try setting the path from \"Tools->Preferences->Paths\" or granting permissions for the desired path. Trying to open: $1"
+fi
+
 exec xdg-open "$@"

@@ -88,7 +88,6 @@ modules:
       - rm -r /app/share/metainfo
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
       - install -Dm755 evince /app/bin/evince
-      - install -Dm755 additional_settings.py /app/bin/additional_settings.py
       - install -Dm755 startLyX.sh /app/bin/startLyX.sh
     sources:
       - type: archive
@@ -96,10 +95,6 @@ modules:
         sha256: 74de28a07ef37aa9471bc9962db182152a25310c7d1f47f676bb9bc63d9713c5
       - type: file
         path: startLyX.sh
-      - type: file
-        path: additional_settings.py
-      - type: patch
-        path: configure.py.patch
       - type: file
         path: evince
       - type: file

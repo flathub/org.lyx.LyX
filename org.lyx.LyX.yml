@@ -83,6 +83,7 @@ modules:
     buildsystem: autotools
     config-opts:
       - --with-included-hunspell
+      - --enable-qt6
     post-install:
       - rm -r /app/share/metainfo
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml

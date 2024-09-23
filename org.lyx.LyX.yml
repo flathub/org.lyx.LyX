@@ -12,8 +12,7 @@ finish-args:
   - --share=ipc
   - --persist=.lyx
   - --persist=Rpkgs
-  - --filesystem=xdg-pictures:ro
-  - --filesystem=xdg-documents
+  - --filesystem=home
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: "23.08"
@@ -91,8 +90,8 @@ modules:
       - install -Dm755 startLyX.sh /app/bin/startLyX.sh
     sources:
       - type: archive
-        url: http://ftp.lyx.org/pub/lyx/stable/2.4.x/lyx-2.4.1.tar.xz
-        sha256: 74de28a07ef37aa9471bc9962db182152a25310c7d1f47f676bb9bc63d9713c5
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.2.tar.xz
+        sha256: 0d5a75dec9a169ab23bfa47da53ec65c62432de57014de315023d620ebccfe68
       - type: file
         path: startLyX.sh
       - type: file

@@ -1,6 +1,6 @@
 app-id: org.lyx.LyX
 runtime: org.kde.Platform
-runtime-version: "5.15-23.08"
+runtime-version: "6.7"
 sdk: org.kde.Sdk
 command: startLyX.sh
 rename-desktop-file: lyx.desktop
@@ -83,6 +83,7 @@ modules:
     buildsystem: autotools
     config-opts:
       - --with-included-hunspell
+      - --enable-qt6
     post-install:
       - rm -r /app/share/metainfo
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
@@ -90,8 +91,8 @@ modules:
       - install -Dm755 startLyX.sh /app/bin/startLyX.sh
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.2.tar.xz
-        sha256: 0d5a75dec9a169ab23bfa47da53ec65c62432de57014de315023d620ebccfe68
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.2.1.tar.xz
+        sha256: 1d2b1c7abe391e2fb49109de2c8e13a7dfe605f27df68f689bf947dfafc7a4d9
       - type: file
         path: startLyX.sh
       - type: file

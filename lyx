@@ -118,4 +118,4 @@ EOl
 fi
 
 
-exec lyx "$@"
+exec _lyx "$@"

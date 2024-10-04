@@ -2,7 +2,7 @@ app-id: org.lyx.LyX
 runtime: org.kde.Platform
 runtime-version: "5.15-23.08"
 sdk: org.kde.Sdk
-command: startLyX.sh
+command: lyx
 rename-desktop-file: lyx.desktop
 rename-icon: lyx
 finish-args:
@@ -87,13 +87,14 @@ modules:
       - rm -r /app/share/metainfo
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
       - install -Dm755 evince /app/bin/evince
-      - install -Dm755 startLyX.sh /app/bin/startLyX.sh
+      - mv /app/bin/lyx /app/bin/_lyx
+      - install -Dm755 lyx -t /app/bin/
     sources:
       - type: archive
         url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.2.1.tar.xz
         sha256: 1d2b1c7abe391e2fb49109de2c8e13a7dfe605f27df68f689bf947dfafc7a4d9
       - type: file
-        path: startLyX.sh
+        path: lyx
       - type: file
         path: evince
       - type: file

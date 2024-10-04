@@ -2,7 +2,7 @@ app-id: org.lyx.LyX
 runtime: org.kde.Platform
 runtime-version: "5.15-23.08"
 sdk: org.kde.Sdk
-command: lyx
+command: startLyX.sh
 rename-desktop-file: lyx.desktop
 rename-icon: lyx
 finish-args:
@@ -12,12 +12,7 @@ finish-args:
   - --share=ipc
   - --persist=.lyx
   - --persist=Rpkgs
-  - --filesystem=xdg-pictures:ro
-  - --filesystem=xdg-documents
-  - --env=PATH=/app/plugins/SweaveKnitr/bin:/app/plugins/LilyPond/bin:/app/texlive/bin/:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux:/app/bin:/usr/bin
-  - --env=ASPELL_CONF=dict-dir /app/share/dicts
-  - --env=LD_LIBRARY_PATH=/app/texlive/lib:/app/texlive/lib/perl5/5.38.2/aarch64-linux/CORE:/app/texlive/lib/perl5/5.38.2/x86_64-linux/CORE
-  - --env=PERL5LIB=/app/texlive/lib/perl5/5.38.2:/app/texlive/lib/perl5/site_perl/5.38.2
+  - --filesystem=home
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: "23.08"
@@ -36,18 +31,19 @@ modules:
     build-commands:
       - install -d /app/texlive
       - install -d /app/plugins
-  - name: magick
+  - name: ImageMagick 
     buildsystem: autotools
     sources:
-      - type: archive
-        url: https://github.com/ImageMagick/ImageMagick/archive/refs/tags/7.1.1-21.tar.gz
-        sha256: 09402e5f17c6575ef9f010bb2e21ae1710f1f3426f115ad4317ee9129c32608e
+      - type: git
+        url: https://github.com/ImageMagick/ImageMagick.git
+        tag: 7.1.1-35
+        commit: d775d2ac6fc0ca1790ec9a248b34b8c3bd391566
   - name: ed-rcs
     buildsystem: autotools
     sources:
       - type: archive
-        url: http://mirror.team-cymru.com/gnu/ed/ed-1.19.tar.lz
-        sha256: ce2f2e5c424790aa96d09dacb93d9bbfdc0b7eb6249c9cb7538452e8ec77cd48
+        url: https://ftp.gnu.org/gnu/ed/ed-1.20.2.tar.lz
+        sha256: 65fec7318f48c2ca17f334ac0f4703defe62037bb13cc23920de077b5fa24523
   - name: rcs
     buildsystem: autotools
     sources:
@@ -91,15 +87,13 @@ modules:
       - rm -r /app/share/metainfo
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
       - install -Dm755 evince /app/bin/evince
-      - install -Dm755 additional_settings.py /app/bin/additional_settings.py
+      - install -Dm755 startLyX.sh /app/bin/startLyX.sh
     sources:
       - type: archive
-        url: http://ftp.lyx.org/pub/lyx/stable/2.4.x/lyx-2.4.1.tar.xz
-        sha256: 74de28a07ef37aa9471bc9962db182152a25310c7d1f47f676bb9bc63d9713c5
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.2.1.tar.xz
+        sha256: 1d2b1c7abe391e2fb49109de2c8e13a7dfe605f27df68f689bf947dfafc7a4d9
       - type: file
-        path: additional_settings.py
-      - type: patch
-        path: configure.py.patch
+        path: startLyX.sh
       - type: file
         path: evince
       - type: file

@@ -1,1 +1,19 @@
+ruta_completa=$(realpath "$1")
+ruta_tmp_sandbox="/tmp/"
+
+if [[ "$ruta_completa" == "$ruta_tmp_sandbox"* ]]; then
+	if ! [[ -f ~/.lyx/noShowMessage ]]; then
+		result=$(zenity --warning \
+                   --text="If you have problems viewing the pdf, it may be because you do not have access to the path for temporary files used by LyX, try changing it or granting access permissions. More information at: https://github.com/flathub/org.lyx.LyX\nTrying to open: $ruta_completa" \
+                   --extra-button="Don't show message again"\
+                   --ok-label="Accept")
+
+		if [[ "$result" == "Don't show message again" ]]; then
+			touch ~/.lyx/noShowMessage
+                fi
+        fi
+fi
+
+echo " Running: xdg-open ${ruta_completa}"
 exec xdg-open "$@"
+

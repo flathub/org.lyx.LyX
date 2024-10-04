@@ -79,6 +79,6 @@
         <content_attribute id="social-info">mild</content_attribute>
     </content_rating>
     <releases>
-        <release version="2.4.2" date="2024-09-19"></release>
+        <release version="2.4.2.1" date="2024-10-03"></release>
     </releases>
 </component>

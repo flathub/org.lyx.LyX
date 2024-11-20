@@ -39,20 +39,20 @@
 
     <screenshots>
         <screenshot type="default">
-          <image>https://bztd.github.io/LyX/p1.png</image>
+          <image>https://bztd.github.io/Flathub/LyX/p1.png</image>
           <caption>The startup screen of LyX</caption>
         </screenshot>
 	    
         <screenshot>
-          <image>https://bztd.github.io/LyX/p2.png</image>
+          <image>https://bztd.github.io/Flathub/LyX/p2.png</image>
         </screenshot>
 	    
         <screenshot>
-          <image>https://bztd.github.io/LyX/p3.png</image>
+          <image>https://bztd.github.io/Flathub/LyX/p3.png</image>
         </screenshot>
 
 	<screenshot>
-          <image>https://bztd.github.io/LyX/beamer.png</image>
+          <image>https://bztd.github.io/Flathub/LyX/beamer.png</image>
           <caption>Beamer in LyX</caption>
         </screenshot>
     </screenshots>

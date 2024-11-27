@@ -93,6 +93,8 @@ modules:
       - type: archive
         url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.2.1.tar.xz
         sha256: 1d2b1c7abe391e2fb49109de2c8e13a7dfe605f27df68f689bf947dfafc7a4d9
+      - type: patch
+        path: lyxrc.dist.in.patch
       - type: file
         path: lyx
       - type: file

@@ -6,3 +6,13 @@ If you have problems viewing pdfs, try:
   - sudo flatpak override org.lyx.LyX --filesystem=path_to_temporary_directory
 
 - Set that path for temporary files in LyX 'Tools->Preferences->Paths->Temporary directory'
+
+If you want to install lyx-2.3.7-1 from flathub, you can do so, although you need to complete the dependencies by hand:
+- Download LyX
+  - flatpak install --no-deps org.lyx.LyX
+- Revert changes to v2.3.7-1
+  - sudo flatpak update --commit=5bea7d745bdcd0cbbeda016068379833024f5c20c66e839fead875518752b242 org.lyx.LyX
+- Install dependencies:
+  - flatpak install org.freedesktop.Sdk.Extension.texlive//23.08
+  - flatpak install org.kde.Platform//5.15-23.08
+

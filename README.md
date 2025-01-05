@@ -1,4 +1,4 @@
-The 'beta' branch uses the 'org.kde.Platform//6.7' runtime.
+The 'beta' branch uses the 'org.kde.Platform//5.15-24.08' runtime, lyx-2.3.7-1 and texlive-24.08.
 ***
 
 LyX is by default set to store temporary files in the path '~/Documents/.tmplyx', which can be changed from the 'Tools->Preferences->Paths' menu. In this path, LyX stores pdfs, if it is not accessible it will use the '/tmp' folder. The path must be accessible from outside the sandbox or it will not be possible to use an external pdf viewer.
@@ -9,7 +9,7 @@ If you have problems viewing pdfs, try:
 - Set that path for temporary files in LyX 'Tools->Preferences->Paths->Temporary directory'
 ***
 
-If you want to install lyx-2.3.7-1 from flathub, you can do so, although you need to complete the dependencies by hand:
+If you want to install lyx-2.3.7-1 from the 'stable' branch, you can do so, although you will need to complete the dependencies by hand:
 - Download LyX
   - flatpak install --no-related org.lyx.LyX
 - Revert changes to v2.3.7-1

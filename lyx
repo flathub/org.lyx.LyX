@@ -2,8 +2,14 @@
 
 ######Def. Functions
 sprint(){
-	echo " startTeXmacs.sh: "$1
+	echo " start LyX: "$1
 	echo " "
+}
+
+smessage(){
+	result=$(zenity --warning \
+                   --text="$1 \nMore information at: https://github.com/flathub/org.lyx.LyX" \
+                   --ok-label="Accept")
 }
 ###
 
@@ -114,8 +120,16 @@ EOl
 		sprint "creating temporary directory \"${doc_path_dir}/${lyx_temp_dir_name}\"."
 		mkdir -p ${doc_path_dir}/${lyx_temp_dir_name}
 	fi
+else
+	path_lyx_temp_dir_name=$(sed -n 's/^\\tempdir_path "\([^"]*\)"$/\1/p' ~/.lyx/preferences)
+	if [[ "$path_lyx_temp_dir_name" == "" ]]; then
+		smessage "It seems that the path to the temporary files has not been set, you can do it at: Tools>Preferences>Paths>Temporary directory."
+	elif [[ "$path_lyx_temp_dir_name" =~ ^"/run/user/"* ]]; then
+		smessage "In order to view PDFs, the temporary files folder must be in a path to which LyX has permission, outside the sandbox."
+	fi
+
 
 fi
 
 
-exec lyx "$@"
+exec _lyx "$@"

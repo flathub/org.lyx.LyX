@@ -1,8 +1,8 @@
 app-id: org.lyx.LyX
 runtime: org.kde.Platform
-runtime-version: "6.7"
+runtime-version: "5.15-24.08"
 sdk: org.kde.Sdk
-command: startLyX.sh
+command: lyx
 rename-desktop-file: lyx.desktop
 rename-icon: lyx
 finish-args:
@@ -15,11 +15,11 @@ finish-args:
   - --filesystem=home
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: "23.08"
+    version: "24.08"
     directory: texlive
     autodelete: false
   org.lyx.LyX.Plugin:
-    versions: stable;beta;test
+    versions: "stable;beta;test"
     directory: plugins
     subdirectories: true
     no-autodownload: true
@@ -83,19 +83,17 @@ modules:
     buildsystem: autotools
     config-opts:
       - --with-included-hunspell
-      - --enable-qt6
     post-install:
-      - rm -r /app/share/metainfo
-      - desktop-file-edit --set-key=Exec --set-value="startLyX.sh %F" /app/share/applications/lyx.desktop
       - install -Dm644 org.lyx.LyX.appdata.xml /app/share/appdata/org.lyx.LyX.appdata.xml
       - install -Dm755 evince /app/bin/evince
-      - install -Dm755 startLyX.sh /app/bin/startLyX.sh
+      - mv /app/bin/lyx /app/bin/_lyx
+      - install -Dm755 lyx -t /app/bin/
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.2.1.tar.xz
-        sha256: 1d2b1c7abe391e2fb49109de2c8e13a7dfe605f27df68f689bf947dfafc7a4d9
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.3.x/lyx-2.3.7-1.tar.xz
+        sha256: 39be8864fb86b34e88310e70fb80e5e9e296601f0856cf161aa094171718d8ed
       - type: file
-        path: startLyX.sh
+        path: lyx
       - type: file
         path: evince
       - type: file

@@ -13,7 +13,8 @@
 	<p>
   	    Advertisement: This package contains only TexLive, a spell checker (Hunspell)
             and a version control (rcs). Via addons you can add support for LilyPond, Sweave and Knitr.
-            After installing an add-ons, you must reconfigure, Tools->Reconfigure.
+            After installing an add-ons, you must reconfigure, Tools->Reconfigure. More information 
+            at https://github.com/flathub/org.lyx.LyX/blob/master/README.md.
 	</p>
 	<p>
 	    LyX combines the power and flexibility of TeX/LaTeX with the
@@ -39,20 +40,20 @@
 
     <screenshots>
         <screenshot type="default">
-          <image>https://bztd.github.io/LyX/p1.png</image>
+          <image>https://bztd.github.io/Flathub/LyX/p1.png</image>
           <caption>The startup screen of LyX</caption>
         </screenshot>
 	    
         <screenshot>
-          <image>https://bztd.github.io/LyX/p2.png</image>
+          <image>https://bztd.github.io/Flathub/LyX/p2.png</image>
         </screenshot>
 	    
         <screenshot>
-          <image>https://bztd.github.io/LyX/p3.png</image>
+          <image>https://bztd.github.io/Flathub/LyX/p3.png</image>
         </screenshot>
 
 	<screenshot>
-          <image>https://bztd.github.io/LyX/beamer.png</image>
+          <image>https://bztd.github.io/Flathub/LyX/beamer.png</image>
           <caption>Beamer in LyX</caption>
         </screenshot>
     </screenshots>

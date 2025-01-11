@@ -90,8 +90,8 @@ modules:
       - install -Dm755 lyx -t /app/bin/
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.3.x/lyx-2.3.7-1.tar.xz
-        sha256: 39be8864fb86b34e88310e70fb80e5e9e296601f0856cf161aa094171718d8ed
+        url: https://ftp.icm.edu.pl/packages/lyx/stable/2.3.x/lyx-2.3.8.tar.gz
+        sha256: 23f99e1a0bbff003417972e84ec4d407aa768c9844771dcbe9d7927aede1a909
       - type: file
         path: lyx
       - type: file

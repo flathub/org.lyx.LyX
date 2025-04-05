@@ -11,7 +11,6 @@ finish-args:
   - --device=dri
   - --share=ipc
   - --persist=.lyx
-  - --persist=Rpkgs
   - --filesystem=home
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
@@ -44,8 +43,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick.git
-        tag: 7.1.1-35
-        commit: d775d2ac6fc0ca1790ec9a248b34b8c3bd391566
+        tag: 7.1.1-47
+        commit: 82572afc879b439cbf8c9c6f3a9ac7626adf98fb
   - name: ed-rcs
     buildsystem: autotools
     sources:
@@ -58,13 +57,13 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/rcs/rcs-5.10.1.tar.lz
         sha256: 43ddfe10724a8b85e2468f6403b6000737186f01e60e0bd62fde69d842234cc5
-  - name: libertinus-font
+  - name: Fonts
     buildsystem: simple
     build-commands:
       - mkdir /app/share/fonts
       - cp static/OTF/* /app/share/fonts/
     sources:
-      - type: archive
+      - type: archive #libertinus
         url: https://github.com/alerque/libertinus/releases/download/v7.040/Libertinus-7.040.tar.xz
         sha256: 7fe9f022722d1c1cc67dc2c28a110b3bb55bae3575196160d2422c89333b3850
   - name: dictEs-aspell

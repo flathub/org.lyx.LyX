@@ -60,12 +60,15 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/rcs/rcs-5.10.1.tar.lz
         sha256: 43ddfe10724a8b85e2468f6403b6000737186f01e60e0bd62fde69d842234cc5
-  - name: Fonts
+  - name: fonts
     buildsystem: simple
     build-commands:
       - mkdir /app/share/fonts
       - cp static/OTF/* /app/share/fonts/
+      - chmod +x search-configure-TEXfonts.sh && ./search-configure-TEXfonts.sh
     sources:
+      - type: file
+        path: search-configure-TEXfonts.sh
       - type: archive #libertinus
         url: https://github.com/alerque/libertinus/releases/download/v7.040/Libertinus-7.040.tar.xz
         sha256: 7fe9f022722d1c1cc67dc2c28a110b3bb55bae3575196160d2422c89333b3850
@@ -100,13 +103,10 @@ modules:
       - install -Dm755 evince /app/bin/evince
       - mv /app/bin/lyx /app/bin/_lyx
       - install -Dm755 lyx -t /app/bin/
-      - chmod +x search-configure-TEXfonts.sh && ./search-configure-TEXfonts.sh
     sources:
       - type: archive
         url: https://mirrors.ocf.berkeley.edu/lyx/stable/2.4.x/lyx-2.4.3.tar.xz
         sha256: fa6761f598a5915af50a423dd2a607048bdbc540a6d572385fe422df581eebf6
-      - type: file
-        path: search-configure-TEXfonts.sh
       - type: file
         path: lyx
       - type: file

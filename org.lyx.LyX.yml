@@ -12,6 +12,7 @@ finish-args:
   - --share=ipc
   - --persist=.lyx
   - --filesystem=home
+  - --env=PATH=/usr/bin:/app/bin:/app/plugins/maxima/bin
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: "24.08"
@@ -24,7 +25,7 @@ add-extensions:
     no-autodownload: true
     autodelete: true
     add-ld-path: lib
-  io.github.wxmaxima_developers.wxMaxima.Plugin:
+  io.github.wxmaxima_developers.wxMaxima.Plugin.maxima:
     versions: stable;test;master
     directory: plugins/maxima
     subdirectories: false

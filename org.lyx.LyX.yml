@@ -13,6 +13,8 @@ finish-args:
   - --persist=.lyx
   - --filesystem=home
   - --env=PATH=/usr/bin:/app/bin:/app/plugins/maxima/bin
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.texlive
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: "24.08"
@@ -98,6 +100,7 @@ modules:
       - install -Dm755 evince /app/bin/evince
       - mv /app/bin/lyx /app/bin/_lyx
       - install -Dm755 lyx -t /app/bin/
+      - chmod +x search-configure-TEXfonts.sh && ./search-configure-TEXfonts.sh
     sources:
       - type: archive
         url: https://mirrors.ocf.berkeley.edu/lyx/stable/2.4.x/lyx-2.4.3.tar.xz

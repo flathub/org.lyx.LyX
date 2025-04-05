@@ -25,6 +25,14 @@ add-extensions:
     no-autodownload: true
     autodelete: true
     add-ld-path: lib
+  io.github.wxmaxima_developers.wxMaxima.Plugin:
+    versions: stable;test;master
+    directory: plugins/maxima
+    subdirectories: false
+    no-autodownload: true
+    autodelete: true
+    add-ld-path: lib
+    
 modules:
   - name: texliveYextensions
     buildsystem: simple

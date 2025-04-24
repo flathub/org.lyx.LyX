@@ -104,9 +104,9 @@ modules:
       - mv /app/bin/lyx /app/bin/_lyx
       - install -Dm755 lyx -t /app/bin/
     sources:
-      - type: archive
-        url: https://mirrors.ocf.berkeley.edu/lyx/stable/2.4.x/lyx-2.4.3.tar.xz
-        sha256: fa6761f598a5915af50a423dd2a607048bdbc540a6d572385fe422df581eebf6
+      - type: git
+        url: https://git.lyx.org/repos/lyx.git
+        commit: db97ead517e7279b969308f4919c37a900e4145a
       - type: file
         path: lyx
       - type: file

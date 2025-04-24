@@ -105,8 +105,8 @@ modules:
       - install -Dm755 lyx -t /app/bin/
     sources:
       - type: git
-        url: git://git.lyx.org/lyx
-        commit: d961724884a01aeab661c07651a1aa7d77820afd
+        url: https://git.lyx.org/repos/lyx.git
+        commit: db97ead517e7279b969308f4919c37a900e4145a
       - type: file
         path: lyx
       - type: file

@@ -41,6 +41,20 @@ modules:
     build-commands:
       - install -d /app/texlive
       - install -d /app/plugins
+      
+  - name: ghostscript
+    config-opts:
+      - --disable-cups
+    build-options:
+      ldflags: -L/app/lib
+      arch:
+        aarch64:
+          cppflags: -DPNG_ARM_NEON_OPT=0
+    sources:
+      - type: archive
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/ghostscript-10.05.0.tar.gz
+        sha512: e6890e72e7734cfe9b923a7bafae9c38a3ccca650b51374e403b6754f972dbca8278f44b3e3b32465309aacc73382dffae1b8deccb5469ff3637f7f3353dace9
+        
   - name: ImageMagick 
     buildsystem: autotools
     sources:

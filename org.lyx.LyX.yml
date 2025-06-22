@@ -41,6 +41,20 @@ modules:
     build-commands:
       - install -d /app/texlive
       - install -d /app/plugins
+      
+  - name: ghostscript
+    config-opts:
+      - --disable-cups
+    build-options:
+      ldflags: -L/app/lib
+      arch:
+        aarch64:
+          cppflags: -DPNG_ARM_NEON_OPT=0
+    sources:
+      - type: archive
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/ghostscript-10.05.0.tar.gz
+        sha512: e6890e72e7734cfe9b923a7bafae9c38a3ccca650b51374e403b6754f972dbca8278f44b3e3b32465309aacc73382dffae1b8deccb5469ff3637f7f3353dace9
+        
   - name: ImageMagick 
     buildsystem: autotools
     sources:
@@ -105,8 +119,8 @@ modules:
       - install -Dm755 lyx -t /app/bin/
     sources:
       - type: archive
-        url: https://mirrors.ocf.berkeley.edu/lyx/stable/2.4.x/lyx-2.4.3.tar.xz
-        sha256: fa6761f598a5915af50a423dd2a607048bdbc540a6d572385fe422df581eebf6
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.4.tar.xz
+        sha256: ffacd37480f320f3f3f8f30445fe40897e9df44c94ee87ba0413e364086f4b90
       - type: file
         path: lyx
       - type: file

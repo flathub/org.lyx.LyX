@@ -1,6 +1,6 @@
 app-id: org.lyx.LyX
 runtime: org.kde.Platform
-runtime-version: "6.8"
+runtime-version: '6.9'
 sdk: org.kde.Sdk
 command: lyx
 rename-desktop-file: lyx.desktop
@@ -17,7 +17,7 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.texlive
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: "24.08"
+    version: '24.08'
     directory: texlive
     autodelete: false
   org.lyx.LyX.Plugin:
@@ -34,14 +34,14 @@ add-extensions:
     no-autodownload: true
     autodelete: true
     add-ld-path: lib
-    
+
 modules:
   - name: texliveYextensions
     buildsystem: simple
     build-commands:
       - install -d /app/texlive
       - install -d /app/plugins
-      
+
   - name: ghostscript
     config-opts:
       - --disable-cups
@@ -52,28 +52,41 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10050/ghostscript-10.05.0.tar.gz
-        sha512: e6890e72e7734cfe9b923a7bafae9c38a3ccca650b51374e403b6754f972dbca8278f44b3e3b32465309aacc73382dffae1b8deccb5469ff3637f7f3353dace9
-        
-  - name: ImageMagick 
-    buildsystem: autotools
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostscript-10.05.1.tar.gz
+        sha512: ac1ab58f474467006d7735858e42a3db9a07aa092f907b14f1147447d08c8b4f5b499bca31c09c1558304787fe59d666c9f1aa531d219f27e17d5f9c9523f58c
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
+          version-query: .name | split(" ") | .[1]
+          url-query: .assets[] | select(.name|test("^ghostscript-(.*).tar.gz$")) |
+            .browser_download_url
+  - name: ImageMagick
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick.git
         tag: 7.1.1-47
         commit: 82572afc879b439cbf8c9c6f3a9ac7626adf98fb
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d.]+-[\d]+)$
   - name: ed-rcs
-    buildsystem: autotools
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/ed/ed-1.20.2.tar.lz
-        sha256: 65fec7318f48c2ca17f334ac0f4703defe62037bb13cc23920de077b5fa24523
+        url: https://ftp.gnu.org/gnu/ed/ed-1.21.1.tar.lz
+        sha256: d6d0c7192b02b0519c902a93719053e865ade5a784a3b327d93d888457b23c4b
+        x-checker-data:
+          type: anitya
+          project-id: 659
+          url-template: https://ftp.gnu.org/gnu/ed/ed-$version.tar.lz
   - name: rcs
-    buildsystem: autotools
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/rcs/rcs-5.10.1.tar.lz
         sha256: 43ddfe10724a8b85e2468f6403b6000737186f01e60e0bd62fde69d842234cc5
+        x-checker-data:
+          type: anitya
+          project-id: 4167
+          url-template: https://ftp.gnu.org/gnu/rcs/rcs-$version.tar.lz
   - name: fonts
     buildsystem: simple
     build-commands:
@@ -84,8 +97,14 @@ modules:
       - type: file
         path: search-configure-TEXfonts.sh
       - type: archive #libertinus
-        url: https://github.com/alerque/libertinus/releases/download/v7.040/Libertinus-7.040.tar.xz
-        sha256: 7fe9f022722d1c1cc67dc2c28a110b3bb55bae3575196160d2422c89333b3850
+        url: https://github.com/alerque/libertinus/releases/download/v7.051/Libertinus-7.051.tar.zst
+        sha256: 250677c929d3775a30913643594379af264ac2ef2801035aa1dcbe30b9be23a6
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/alerque/libertinus/releases/latest
+          version-query: .name | split(" ") | .[1]
+          url-query: .assets[] | select(.name|test("^Libertinus-(.*).tar.zst$")) |
+            .browser_download_url
   - name: dictEs-aspell
     buildsystem: simple
     build-commands:
@@ -96,6 +115,10 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/aspell/dict/es/aspell6-es-1.11-2.tar.bz2
         sha256: ad367fa1e7069c72eb7ae37e4d39c30a44d32a6aa73cedccbd0d06a69018afcc
+        x-checker-data:
+          type: anitya
+          project-id: 16361
+          url-template: https://ftp.gnu.org/gnu/aspell/dict/es/aspell6-es-$version.tar.bz2
   - name: dictEn-aspell
     buildsystem: simple
     build-commands:
@@ -106,8 +129,11 @@ modules:
       - type: archive
         url: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2
         sha256: 4c8f734a28a088b88bb6481fcf972d0b2c3dc8da944f7673283ce487eac49fb3
+        x-checker-data:
+          type: anitya
+          project-id: 7838
+          url-template: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-$version.tar.bz2
   - name: lyx
-    buildsystem: autotools
     config-opts:
       - --with-included-hunspell
       - --enable-qt6
@@ -121,6 +147,10 @@ modules:
       - type: archive
         url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.4.tar.xz
         sha256: ffacd37480f320f3f3f8f30445fe40897e9df44c94ee87ba0413e364086f4b90
+        x-checker-data:
+          type: anitya
+          project-id: 1864
+          url-template: https://ftp.lip6.fr/pub/lyx/stable/$major.$minor.x/lyx-$version.tar.xz
       - type: file
         path: lyx
       - type: file

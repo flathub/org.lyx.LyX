@@ -91,7 +91,7 @@ modules:
     buildsystem: simple
     build-commands:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "pip" --no-build-isolation
-      - ln -s /app/bin/pip3 /app/bin/pip
+      - ln -s /app/bin/pip /app/bin/pip3
     sources:
       - type: file
         url: https://files.pythonhosted.org/packages/29/a2/d40fb2460e883eca5199c62cfc2463fd261f760556ae6290f88488c362c0/pip-25.1.1-py3-none-any.whl

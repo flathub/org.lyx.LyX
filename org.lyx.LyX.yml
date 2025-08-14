@@ -64,16 +64,16 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick.git
-        tag: 7.1.1-47
-        commit: 82572afc879b439cbf8c9c6f3a9ac7626adf98fb
+        tag: 7.1.2-1
+        commit: 83b6fc338ae1d38602eb5f6b307393adc3a0e1a7
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+-[\d]+)$
   - name: ed-rcs
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/ed/ed-1.21.1.tar.lz
-        sha256: d6d0c7192b02b0519c902a93719053e865ade5a784a3b327d93d888457b23c4b
+        url: https://ftp.gnu.org/gnu/ed/ed-1.22.1.tar.lz
+        sha256: 1af541116796d6b9e4b66ef9c45ddce0e15a19ed62bfca362ccd7d472cc1c8fb
         x-checker-data:
           type: anitya
           project-id: 659

@@ -21,7 +21,7 @@ if ! [[ $perl_version =~ ^[0-9.]+$ ]]; then
   sprint "Possible error in environment variables."
 fi
 
-PATH=${HOME}/.var/app/org.lyx.LyX/data/python/bin:/app/texlive/bin:/app/texlive/bin/${architecture_type}-linux:${PATH}
+PATH=/var/data/python/bin:/app/texlive/bin:/app/texlive/bin/${architecture_type}-linux:${PATH}
 export LD_LIBRARY_PATH=/app/texlive/lib:/app/texlive/lib/perl5/${perl_version}/${architecture_type}-linux/CORE:${LD_LIBRARY_PATH}
 export PERL5LIB=/app/texlive/lib/perl5/${perl_version}:/app/texlive/lib/perl5/site_perl/${perl_version}
 export ASPELL_CONF='dict-dir /app/share/dicts'

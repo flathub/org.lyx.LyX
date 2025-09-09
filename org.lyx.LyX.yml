@@ -52,8 +52,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostscript-10.05.1.tar.gz
-        sha512: ac1ab58f474467006d7735858e42a3db9a07aa092f907b14f1147447d08c8b4f5b499bca31c09c1558304787fe59d666c9f1aa531d219f27e17d5f9c9523f58c
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.gz
+        sha512: 21ba2110693cfb98126f06daff410b0a94ae9b1690b867a383aa82b56a817ffd237044e024c2cf26daa6efe4d5cf8903db8e637c4629f0c8a0eb325a30fdc0cb
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
@@ -64,16 +64,16 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick.git
-        tag: 7.1.2-1
-        commit: 83b6fc338ae1d38602eb5f6b307393adc3a0e1a7
+        tag: 7.1.2-3
+        commit: 147bc9c12ce8fbc1e94af5b5f6f0643ca410103a
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+-[\d]+)$
   - name: ed-rcs
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/ed/ed-1.22.1.tar.lz
-        sha256: 1af541116796d6b9e4b66ef9c45ddce0e15a19ed62bfca362ccd7d472cc1c8fb
+        url: https://ftp.gnu.org/gnu/ed/ed-1.22.2.tar.lz
+        sha256: f58d15242056e15af76f13f34c60d890fa2a2d5cb0abef91c115e4d83794ffe3
         x-checker-data:
           type: anitya
           project-id: 659

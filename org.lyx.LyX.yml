@@ -52,8 +52,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10051/ghostscript-10.05.1.tar.gz
-        sha512: ac1ab58f474467006d7735858e42a3db9a07aa092f907b14f1147447d08c8b4f5b499bca31c09c1558304787fe59d666c9f1aa531d219f27e17d5f9c9523f58c
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.gz
+        sha512: 21ba2110693cfb98126f06daff410b0a94ae9b1690b867a383aa82b56a817ffd237044e024c2cf26daa6efe4d5cf8903db8e637c4629f0c8a0eb325a30fdc0cb
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest

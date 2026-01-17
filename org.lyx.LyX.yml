@@ -69,7 +69,7 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+-[\d]+)$
-  - name: ed-rcs
+  - name: ed #rcs
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/ed/ed-1.22.2.tar.lz
@@ -155,8 +155,8 @@ modules:
       - install -Dm755 lyx -t /app/bin/
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.4.tar.xz
-        sha256: ffacd37480f320f3f3f8f30445fe40897e9df44c94ee87ba0413e364086f4b90
+        url: https://ftp.lip6.fr/pub/lyx/devel/lyx-2.5/lyx-2.5.0~RC2.tar.xz
+        sha256: 9b8813eb686a3c4efe842e07407b0c65ef11183278680fc719c8c267f6af6eff
         x-checker-data:
           type: anitya
           project-id: 1864

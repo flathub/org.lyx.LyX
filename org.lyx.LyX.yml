@@ -17,7 +17,7 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.texlive
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: '24.08'
+    version: '25.08'
     directory: texlive
     autodelete: false
   org.lyx.LyX.Plugin:

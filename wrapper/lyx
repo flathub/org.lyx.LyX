@@ -136,9 +136,11 @@ else
 	elif [[ "$path_lyx_temp_dir_name" =~ ^"/run/user/"* ]]; then
 		smessage "In order to view PDFs, the temporary files folder must be in a path to which LyX has permission, outside the sandbox."
 	fi
-
-
 fi
 
-
-exec _lyx "$@"
+if ! [[ -f ~/.lyx/IsFirstTime1 ]]; then
+	touch ~/.lyx/IsFirstTime1
+	exec _lyx "$@" /app/share/lyx-flatpak/firts_run.lyx
+else
+	exec _lyx "$@"
+fi

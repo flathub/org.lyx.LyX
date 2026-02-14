@@ -13,7 +13,7 @@
 	<p>
   	    Advertisement: This package contains only TexLive, a spell checker (Hunspell)
             and a version control (rcs). Via addons you can add support for Maxima, LilyPond,
-	    Sweave and Knitr. After installing an add-ons, you must reconfigure, Tools->Reconfigure.
+	    Sweave and Knitr. After installing an add-ons, you must reconfigure, Tools-&gt;Reconfigure.
 	    More information at https://github.com/flathub/org.lyx.LyX/blob/master/README.md.
 	</p>
 	<p>
@@ -71,6 +71,9 @@
         <content_attribute id="social-info">mild</content_attribute>
     </content_rating>
     <releases>
-        <release version="2.4.4" date="2025-06-19"></release>
+        <release version="2.5.0" date="2026-02-08">
+            <description></description>
+        </release>
+        <release version="2.4.4" date="2025-06-19"/>
     </releases>
 </component>

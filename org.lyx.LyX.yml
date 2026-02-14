@@ -85,6 +85,7 @@ modules:
         sha256: 43ddfe10724a8b85e2468f6403b6000737186f01e60e0bd62fde69d842234cc5
         x-checker-data:
           type: anitya
+          is-important: true
           project-id: 4167
           url-template: https://ftp.gnu.org/gnu/rcs/rcs-$version.tar.lz
   - name: pip
@@ -160,6 +161,7 @@ modules:
         sha256: 42a15cbc9be68140f06c3a17a77f7fe114cb9ac2e36a97d0059c8aa3d0b97b41
         x-checker-data:
           type: anitya
+          is-main-source: true
           project-id: 1864
           url-template: https://ftp.lip6.fr/pub/lyx/stable/$major.$minor.x/lyx-$version.tar.xz
       - type: file

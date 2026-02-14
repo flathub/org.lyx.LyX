@@ -155,8 +155,8 @@ modules:
       - install -Dm755 lyx -t /app/bin/
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/devel/lyx-2.5/lyx-2.5.0~RC2.tar.xz
-        sha256: 9b8813eb686a3c4efe842e07407b0c65ef11183278680fc719c8c267f6af6eff
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.5.x/lyx-2.5.0.tar.xz
+        sha256: 42a15cbc9be68140f06c3a17a77f7fe114cb9ac2e36a97d0059c8aa3d0b97b41
         x-checker-data:
           type: anitya
           project-id: 1864

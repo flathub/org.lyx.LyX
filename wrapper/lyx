@@ -40,6 +40,8 @@ export PATH
 doc_path_dir=$(xdg-user-dir DOCUMENTS)
 lyx_temp_dir_name=.tmplyx
 
+mkdir -p ~/.lyx
+
 if ! [[ -f ~/.lyx/preferences ]]; then
 	cat >~/.lyx/preferences << EOl
 # LyX 2.5.0 generated this file. If you want to make your own
@@ -140,7 +142,8 @@ fi
 
 if ! [[ -f ~/.lyx/IsFirstTime1 ]]; then
 	touch ~/.lyx/IsFirstTime1
-	exec _lyx "$@" /app/share/lyx-flatpak/firts_run.lyx
+    cp /app/share/lyx-flatpak/first_run.lyx ~/.lyx/
+	exec _lyx "$@" ~/.lyx/first_run.lyx
 else
 	exec _lyx "$@"
 fi

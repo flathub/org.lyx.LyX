@@ -42,12 +42,12 @@ lyx_temp_dir_name=.tmplyx
 
 if ! [[ -f ~/.lyx/preferences ]]; then
 	cat >~/.lyx/preferences << EOl
-# LyX 2.4.0 generated this file. If you want to make your own
+# LyX 2.5.0 generated this file. If you want to make your own
 # modifications you should do them from inside LyX and save.
 
 
 
-Format 38
+Format 40
 
 
 

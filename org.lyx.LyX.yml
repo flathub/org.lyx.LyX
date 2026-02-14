@@ -153,6 +153,7 @@ modules:
       - install -Dm755 evince /app/bin/evince
       - mv /app/bin/lyx /app/bin/_lyx
       - install -Dm755 lyx -t /app/bin/
+      - install -Dm644 first_run.lyx -t /app/share/lyx-flatpak/
     sources:
       - type: archive
         url: https://ftp.lip6.fr/pub/lyx/stable/2.5.x/lyx-2.5.0.tar.xz
@@ -162,9 +163,11 @@ modules:
           project-id: 1864
           url-template: https://ftp.lip6.fr/pub/lyx/stable/$major.$minor.x/lyx-$version.tar.xz
       - type: file
-        path: lyx
+        path: wrapper/lyx
       - type: file
-        path: evince
+        path: wrapper/first_run.lyx
+      - type: file
+        path: wrapper/evince
       - type: file
         path: org.lyx.LyX.appdata.xml
 

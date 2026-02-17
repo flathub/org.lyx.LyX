@@ -1,6 +1,6 @@
 app-id: org.lyx.LyX
 runtime: org.kde.Platform
-runtime-version: '6.9'
+runtime-version: '6.10'
 sdk: org.kde.Sdk
 command: lyx
 rename-desktop-file: lyx.desktop
@@ -17,7 +17,7 @@ sdk-extensions:
   - org.freedesktop.Sdk.Extension.texlive
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: '24.08'
+    version: '25.08'
     directory: texlive
     autodelete: false
   org.lyx.LyX.Plugin:
@@ -64,16 +64,16 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick.git
-        tag: 7.1.2-5
-        commit: 4a620c2a89a7481e83cb4a0ff32db0ccbb3afcd2
+        tag: 7.1.2-13
+        commit: dd991e286b96918917a3392d6dc3ffc0e6907a4e
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+-[\d]+)$
-  - name: ed-rcs
+  - name: ed #rcs
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/ed/ed-1.22.2.tar.lz
-        sha256: f58d15242056e15af76f13f34c60d890fa2a2d5cb0abef91c115e4d83794ffe3
+        url: https://ftp.gnu.org/gnu/ed/ed-1.22.5.tar.lz
+        sha256: 56e107ddc2f29dad6690376c15bf9751509e1ee3b8241710e44edbe5c3a158cc
         x-checker-data:
           type: anitya
           project-id: 659
@@ -85,6 +85,7 @@ modules:
         sha256: 43ddfe10724a8b85e2468f6403b6000737186f01e60e0bd62fde69d842234cc5
         x-checker-data:
           type: anitya
+          is-important: true
           project-id: 4167
           url-template: https://ftp.gnu.org/gnu/rcs/rcs-$version.tar.lz
   - name: pip
@@ -153,18 +154,22 @@ modules:
       - install -Dm755 evince /app/bin/evince
       - mv /app/bin/lyx /app/bin/_lyx
       - install -Dm755 lyx -t /app/bin/
+      - install -Dm644 first_run.lyx -t /app/share/lyx-flatpak/
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.4.x/lyx-2.4.4.tar.xz
-        sha256: ffacd37480f320f3f3f8f30445fe40897e9df44c94ee87ba0413e364086f4b90
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.5.x/lyx-2.5.0.tar.xz
+        sha256: 42a15cbc9be68140f06c3a17a77f7fe114cb9ac2e36a97d0059c8aa3d0b97b41
         x-checker-data:
           type: anitya
+          is-main-source: true
           project-id: 1864
           url-template: https://ftp.lip6.fr/pub/lyx/stable/$major.$minor.x/lyx-$version.tar.xz
       - type: file
-        path: lyx
+        path: wrapper/lyx
       - type: file
-        path: evince
+        path: wrapper/first_run.lyx
+      - type: file
+        path: wrapper/evince
       - type: file
         path: org.lyx.LyX.appdata.xml
 

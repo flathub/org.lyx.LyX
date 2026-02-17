@@ -40,14 +40,16 @@ export PATH
 doc_path_dir=$(xdg-user-dir DOCUMENTS)
 lyx_temp_dir_name=.tmplyx
 
+mkdir -p ~/.lyx
+
 if ! [[ -f ~/.lyx/preferences ]]; then
 	cat >~/.lyx/preferences << EOl
-# LyX 2.4.0 generated this file. If you want to make your own
+# LyX 2.5.0 generated this file. If you want to make your own
 # modifications you should do them from inside LyX and save.
 
 
 
-Format 38
+Format 40
 
 
 
@@ -136,9 +138,12 @@ else
 	elif [[ "$path_lyx_temp_dir_name" =~ ^"/run/user/"* ]]; then
 		smessage "In order to view PDFs, the temporary files folder must be in a path to which LyX has permission, outside the sandbox."
 	fi
-
-
 fi
 
-
-exec _lyx "$@"
+if ! [[ -f ~/.lyx/IsFirstTime1 ]]; then
+	touch ~/.lyx/IsFirstTime1
+    cp /app/share/lyx-flatpak/first_run.lyx ~/.lyx/
+	exec _lyx "$@" ~/.lyx/first_run.lyx
+else
+	exec _lyx "$@"
+fi

@@ -52,8 +52,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.gz
-        sha512: 21ba2110693cfb98126f06daff410b0a94ae9b1690b867a383aa82b56a817ffd237044e024c2cf26daa6efe4d5cf8903db8e637c4629f0c8a0eb325a30fdc0cb
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10070/ghostscript-10.07.0.tar.gz
+        sha512: 46a9aa12971491149d2e718c7babbfa71ea8aee5c042c8f7fa7294485e851ce9a70286907daaf31a36982b1857d23e80a149d954e460f1d8020081f0756d4a7f
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
@@ -64,8 +64,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick.git
-        tag: 7.1.2-13
-        commit: dd991e286b96918917a3392d6dc3ffc0e6907a4e
+        tag: 7.1.2-19
+        commit: 9fbd2b79450e930edb95e8158d412e57a7b27e83
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+-[\d]+)$
@@ -138,8 +138,8 @@ modules:
       - make datadir=/app/share/dicts dictdir=/app/share/dicts install
     sources:
       - type: archive
-        url: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2
-        sha256: 4c8f734a28a088b88bb6481fcf972d0b2c3dc8da944f7673283ce487eac49fb3
+        url: https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2026.02.25-0.tar.bz2
+        sha256: 77a5cb437c45d1115f3b593802c20651d8c93803ed1073278dc1a1240016f10d
         x-checker-data:
           type: anitya
           project-id: 7838
@@ -157,8 +157,8 @@ modules:
       - install -Dm644 first_run.lyx -t /app/share/lyx-flatpak/
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.5.x/lyx-2.5.0.tar.xz
-        sha256: 42a15cbc9be68140f06c3a17a77f7fe114cb9ac2e36a97d0059c8aa3d0b97b41
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.5.x/lyx-2.5.1.tar.xz
+        sha256: f2a2387bcb3f2f546c1fc13e4c74cb4f8aa648706ce5788ef705dd51344d2cfd
         x-checker-data:
           type: anitya
           is-main-source: true

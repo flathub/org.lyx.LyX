@@ -52,8 +52,8 @@ modules:
           cppflags: -DPNG_ARM_NEON_OPT=0
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10070/ghostscript-10.07.0.tar.gz
-        sha512: 46a9aa12971491149d2e718c7babbfa71ea8aee5c042c8f7fa7294485e851ce9a70286907daaf31a36982b1857d23e80a149d954e460f1d8020081f0756d4a7f
+        url: https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10071/ghostscript-10.07.1.tar.gz
+        sha512: 480aef1284dbe4d059dd0f9cc60dd5772d5093239df68b838f7f4f7d2efd77de8f03a7baeffbdbe65126a660c1c169137dd7d8cc28dd3bab59cd286a24ca1491
         x-checker-data:
           type: json
           url: https://api.github.com/repos/ArtifexSoftware/ghostpdl-downloads/releases/latest
@@ -64,8 +64,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/ImageMagick/ImageMagick.git
-        tag: 7.1.2-19
-        commit: 9fbd2b79450e930edb95e8158d412e57a7b27e83
+        tag: 7.1.2-29
+        commit: 360eda553586e389c9c725fc49df94f209a8a3c7
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+-[\d]+)$
@@ -157,8 +157,8 @@ modules:
       - install -Dm644 first_run.lyx -t /app/share/lyx-flatpak/
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.5.x/lyx-2.5.1.tar.xz
-        sha256: f2a2387bcb3f2f546c1fc13e4c74cb4f8aa648706ce5788ef705dd51344d2cfd
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.5.x/lyx-2.5.2.tar.xz
+        sha256: b0221663289d3afd1cd4d83b4843386e65ae9e66b582c2f9896626cb2590c6a5
         x-checker-data:
           type: anitya
           is-main-source: true

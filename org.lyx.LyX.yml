@@ -103,10 +103,7 @@ modules:
     build-commands:
       - mkdir /app/share/fonts
       - cp static/OTF/* /app/share/fonts/
-      - chmod +x search-configure-TEXfonts.sh && ./search-configure-TEXfonts.sh
     sources:
-      - type: file
-        path: search-configure-TEXfonts.sh
       - type: archive #libertinus
         url: https://github.com/alerque/libertinus/releases/download/v7.051/Libertinus-7.051.tar.zst
         sha256: 250677c929d3775a30913643594379af264ac2ef2801035aa1dcbe30b9be23a6

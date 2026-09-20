@@ -158,8 +158,11 @@ modules:
         x-checker-data:
           type: anitya
           is-main-source: true
+          is-important: true
           project-id: 1864
           url-template: https://ftp.lip6.fr/pub/lyx/stable/$major.$minor.x/lyx-$version.tar.xz
+        mirror-urls:
+          - https://mirrors.ocf.berkeley.edu/lyx/stable/2.5.x/lyx-2.5.3.tar.xz
       - type: file
         path: wrapper/lyx
       - type: file

@@ -13,8 +13,7 @@ finish-args:
   - --persist=.lyx
   - --filesystem=home
   - --env=PATH=/usr/bin:/app/bin:/app/plugins/maxima/bin
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.texlive
+  - --env=TEXMFVAR=$XDG_CACHE_HOME
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
     version: '25.08'
@@ -103,10 +102,7 @@ modules:
     build-commands:
       - mkdir /app/share/fonts
       - cp static/OTF/* /app/share/fonts/
-      - chmod +x search-configure-TEXfonts.sh && ./search-configure-TEXfonts.sh
     sources:
-      - type: file
-        path: search-configure-TEXfonts.sh
       - type: archive #libertinus
         url: https://github.com/alerque/libertinus/releases/download/v7.051/Libertinus-7.051.tar.zst
         sha256: 250677c929d3775a30913643594379af264ac2ef2801035aa1dcbe30b9be23a6
@@ -157,8 +153,8 @@ modules:
       - install -Dm644 first_run.lyx -t /app/share/lyx-flatpak/
     sources:
       - type: archive
-        url: https://ftp.lip6.fr/pub/lyx/stable/2.5.x/lyx-2.5.2.tar.xz
-        sha256: b0221663289d3afd1cd4d83b4843386e65ae9e66b582c2f9896626cb2590c6a5
+        url: https://ftp.lip6.fr/pub/lyx/stable/2.5.x/lyx-2.5.3.tar.xz
+        sha256: 85faab35915974be1701cbcc6a18606a34e62cc7c86e0336f152acbc6156a8a6
         x-checker-data:
           type: anitya
           is-main-source: true

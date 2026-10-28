@@ -40,7 +40,14 @@ modules:
     build-commands:
       - install -d /app/texlive
       - install -d /app/plugins
-
+      
+  - name: icu4c
+    buildsystem: autotools
+    subdir: icu4c/source
+    sources:
+      - type: git
+        url: https://github.com/unicode-org/icu.git
+        tag: release-78.3
   - name: ghostscript
     config-opts:
       - --disable-cups

@@ -16,7 +16,7 @@ finish-args:
   - --env=TEXMFVAR=$XDG_CACHE_HOME
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: '26.08'
+    version: '25.08'
     directory: texlive
     autodelete: false
   org.lyx.LyX.Plugin:
